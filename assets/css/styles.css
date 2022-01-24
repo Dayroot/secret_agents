@@ -1,0 +1,19 @@
+/*
+* Abstracs
+*/
+/* Colors */
+/* fonts */
+/*
+* Normalize 
+*/
+*, *::after, *::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.h1::before {
+  content: "hola ana";
+}
+
+/*# sourceMappingURL=styles.css.map */
