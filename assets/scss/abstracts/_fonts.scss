@@ -1,8 +1,30 @@
 
+/* Font for the title */
 @font-face {
     font-family: 'Jolly Lodger';
     src: url('../fonts/JollyLodger-Regular.ttf') format('truetype');
     font-weight: 400;
+    font-style: normal;
+}
+
+/* Font for the subtitle */
+@font-face {
+    font-family: 'Bree Serif';
+    src: url('../fonts/BreeSerif-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../fonts/Comfortaa-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+/* Font for the text body of the text */
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Bold.ttf') format('truetype');
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -14,8 +36,8 @@
 }
 
 @font-face {
-    font-family: 'Orbitron';
-    src: url('../fonts/Orbitron-Regular.ttf') format('truetype');
-    font-weight: 400;
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Light.ttf') format('truetype');
+    font-weight: 300;
     font-style: normal;
 }

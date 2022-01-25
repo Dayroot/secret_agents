@@ -1,11 +1,20 @@
-/*
-* Abstracs
+/* 
+* styles organization
+1. position
+2. box model
+3. Typography
+4. Visuals
+5. Others 
 */
+
+//================ Abstracs ================
+
 @import 'abstracts/variables';
 
-/*
-* Normalize 
-*/
+//================ Abstracs End ================
+
+
+//================ Normalize ================
 *, *::after, *::before {
     box-sizing: inherit;
     padding: 0;
@@ -21,6 +30,243 @@ html {
     scroll-behavior: smooth;
 }
 
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+//================ Normalize end ================
+
+//================ Styles ================
 body {
     font-size: $font-size-md;
+    overflow-x: hidden;
 }
+
+.root-container {
+    position: relative;
+    background-color: $color-primary-dark;
+}
+
+.section-banner{
+    position: relative;
+}
+.banner-parallax {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+
+    &__item {
+        width: 100%;
+        height: 100%;
+        & img {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); 
+            width: 110%;
+        }
+    }
+    &__item--bg {
+        z-index: 1;
+    }
+
+    &__item--clouds {
+        z-index: 2;
+        & img {
+            width: 110%;
+            height: 100%;
+        }
+    }
+
+    &__item--sun {
+        z-index: 3;
+    }
+
+    &__item--mountains {
+        z-index: 4;
+    }
+
+    &__item--floor-back {
+        z-index: 5;
+    }
+
+    &__item--floor-front{
+        z-index: 6;
+        
+    }
+
+    &__item--rocks{
+        z-index: 7;
+    }
+    
+    &__item--puppy{
+        z-index: 7;      
+    }
+
+    &__item--turtle{
+        z-index: 7;   
+    }
+
+    &__item--terry{
+        z-index: 7;   
+    }
+
+    &__item--broken-towers{
+        z-index: 8;
+    }
+
+    &__item--splashes{
+        z-index: 9;
+    }
+}
+
+.button-start {
+    position: absolute;
+    top: 65%;
+    left: 5%;
+    width: 16.8rem;
+    height: 6rem;
+    color: $color-secondary-2-very-light;
+    font: {
+        weight: 700;
+        size: $font-size-3xl;
+    }
+    background: {
+        image: url('../svgs/button-primary-blue.svg');
+        repeat: no-repeat;
+        size: 100%;
+    }
+}
+
+.ground-transition{
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    transform: translate(-50%, -14%);
+    width: 100%;
+    height: 100%;
+}
+
+.section-description {
+    position: relative;
+    color: $color-on-primary;
+    background-color: $color-primary-dark;
+    padding: 4rem 0;
+
+    &__content {
+        display: grid;
+        place-content: center;
+        width: 90%;
+        max-width: 100rem;
+        margin: 0 auto;
+        padding: 15%;
+        border-radius: $rounded-md;
+        background: {
+            image: url('../svgs/brush-shape.svg');
+            repeat: no-repeat;
+            position: center;
+            size: 100%;
+        };
+    }
+
+    &__subtitle {
+        margin-bottom: $spacing-6;
+        color: $color-secondary-1;
+        line-height: $line-height-lg;
+        font: {
+            family: $font-family-subtitle;
+            weight: $font-bold;
+            size: $font-size-4xl;
+        }
+    }
+
+    &__body {
+        display: grid;
+        gap: $spacing-3;
+        margin-bottom: $spacing-6;
+    }
+
+    &__text-body {
+        color: $color-secondary-1-light;
+        line-height: $font-size-xl;
+        font: {
+            family: $font-family-body;
+            weight: $font-light;
+            size: 100%;
+        }
+    }
+
+    &__text-body--bold {
+        font-weight: 700;
+    }
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 28rem;
+
+    background: {
+        image: url('../svgs/footer-background.svg');
+        repeat: no-repeat;
+        size: 100%;
+        position: center top;
+    }
+
+    &__content {
+        position: absolute;
+        bottom: 10%;
+        display: flex;
+        gap: $spacing-4;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 90%;
+        max-width: 60rem;
+        color: $color-secondary-3-light;
+        font: {
+            weight: $font-light;
+            size: $font-size-sm;
+        }
+    }
+
+    &__middle-content {
+        line-height: $font-size-xl;
+        margin-right: $spacing-6;
+    }
+    &__networks {
+        display: flex;
+        color: $color-secondary-3-light;
+    }
+
+    &__right-content {
+        cursor: pointer;
+        transition: all ease-in-out 120ms;
+        &:hover {
+            color: $color-on-background;
+        }
+    }
+
+    &__icon {
+        display: grid;
+        place-items: center;
+        width: 4.8rem;
+        height: 4.8rem;
+        font-size: $font-size-2xl;
+        cursor: pointer;
+        transition: all ease-in-out 120ms;
+        &:hover {
+            color: $color-on-background;
+        }
+    }
+}
+
+
+//================ Styles end================
