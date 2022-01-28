@@ -8,10 +8,14 @@
 gsap.registerPlugin(ScrollTrigger);
 
 /* 
+    Global constants
+*/
+const MAX_LEVEL = 5;
+const MIN_LEVEL = 1;
+/* 
     Global parameter variables
 */
-let sunOcultation = 1;
-
+let gameLevel = MIN_LEVEL;
 /* 
     Classes of the elements to which an animation will be applied using gsap 
 */
@@ -36,7 +40,10 @@ const modalContainer = document.querySelector("#modalContainer");
 const modalBackdrop = document.querySelector(backdropSelector);
 const sunLight1 = document.querySelector(sunLight1Selector);
 const sunLight2 = document.querySelector(sunLight2Selector);
-
+const ModalLevelLinesContainer = document.querySelector( "#ModalLevelLinesContainer" );
+const levelSelectorRight = document.querySelector("#levelSelectorRight");
+const levelSelectorLeft = document.querySelector("#levelSelectorLeft");
+const gameLevelText = document.querySelector("#gameLevelText");
 /*
     Parallax effect when moving the mouse, using the parallax-js library 
 */
@@ -184,7 +191,7 @@ window.onscroll = function(event) {
     const OCCULTATION_COMPLETED = 300;
     const OCCULTATION_START = 80;
     const offSetY = window.pageYOffset || document.documentElement.scrollTop;
-    console.log(offSetY);
+    let sunOcultation;
     if(offSetY > OCCULTATION_START){
         blinkSun.pause();
         if(offSetY < OCCULTATION_COMPLETED)
@@ -198,5 +205,23 @@ window.onscroll = function(event) {
         blinkSun.play(); 
     }
     
-     
+}
+
+levelSelectorRight.onclick = function(event){
+    if(gameLevel < MAX_LEVEL){
+        ++gameLevel;
+        gameLevelText.textContent = gameLevel;
+        const newLevelLine = ModalLevelLinesContainer.childNodes[1].cloneNode();
+        ModalLevelLinesContainer.appendChild(newLevelLine);
+    }
+}
+
+levelSelectorLeft.onclick = function(event){
+    if(gameLevel > MIN_LEVEL){
+        --gameLevel;
+        gameLevelText.textContent = gameLevel;
+        const deleteLine = [...ModalLevelLinesContainer.childNodes].pop();
+        console.log(deleteLine);
+        ModalLevelLinesContainer.removeChild(deleteLine);
+    }
 }
