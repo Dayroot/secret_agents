@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Caesar Cipher</title>
+		<title>Secret Agents game</title>
 		<link rel="stylesheet" href="../../assets/css/styles.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
@@ -30,8 +30,8 @@
 					<div data-depth="0.25" class="banner-parallax__item banner-parallax__item--floor-front">
 						<img src="../../assets/svgs/banner/floor-front.svg">
 					</div>
-					<div data-depth="0.35" class="banner-parallax__item banner-parallax__item--rocks">
-						<img src="../../assets/svgs/banner/rocks.svg">
+					<div data-depth="0.25" id="sunLight1" class="banner-parallax__item banner-parallax__item--sun-light-1">
+						<img src="../../assets/svgs/banner/sun-light-1.svg" alt="">
 					</div>
 					<div data-depth="0.25" class="banner-parallax__item banner-parallax__item--turtle">
 						<img src="../../assets/svgs/banner/turtle.svg">
@@ -45,9 +45,16 @@
 					<div data-depth="0.25" class="banner-parallax__item banner-parallax__item--broken-towers">
 						<img src="../../assets/svgs/banner/broken-towers.svg">
 					</div>
+					<div data-depth="0.35" class="banner-parallax__item banner-parallax__item--rocks">
+						<img src="../../assets/svgs/banner/rocks.svg">
+					</div>
 					<div data-depth="0.45" class="banner-parallax__item banner-parallax__item--splashes">
 						<img src="../../assets/svgs/banner/splashes.svg">
 					</div>
+					<div data-depth="0.5" id="sunLight2" class="banner-parallax__item banner-parallax__item--sun-light-2">
+						<img src="../../assets/svgs/banner/sun-light-2.svg" alt="">
+					</div>
+
 				</div>
 				<button id="buttonStart" class="button-start">START</button>
 			</section>
@@ -64,6 +71,22 @@
 					<p class="section-description__text-body">Now that you know how it works, don't wait any longer and <span class="section-description__text-body--bold">start playing!</span></p>
 				</div>
 			</section>
+			<div id="modalContainer" class="modal-container" style="display: none">
+				<div class="backdrop">
+
+				</div>
+				<div class="modal">
+					<img class="modal__element" src="../../assets/svgs/modal-1/shape-1.svg" alt="">
+					<img id="modalLight" class="modal__element modal__element--light" src="../../assets/svgs/modal-1/lights-1.svg" alt="">
+					<div class="modal__element modal__element--content">
+						<p>Choose a dificulty level</p>
+						<div class="modal__level-line-container">
+							<div class="modal__level-line"></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
 			<footer class="footer">
 				<div class="footer__content">
 					<div class="footer__networks">
