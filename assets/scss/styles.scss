@@ -328,7 +328,9 @@ body {
 
     }
     &__level-line{
-        
+        width: 0.4rem;
+        height: 2.6rem;
+        border-radius: $rounded-lg;
     }
     
 }

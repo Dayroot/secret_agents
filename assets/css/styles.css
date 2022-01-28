@@ -287,5 +287,10 @@ body {
 .modal__element--light {
   mix-blend-mode: screen;
 }
+.modal__level-line {
+  width: 0.4rem;
+  height: 2.6rem;
+  border-radius: 0.8rem;
+}
 
 /*# sourceMappingURL=styles.css.map */
